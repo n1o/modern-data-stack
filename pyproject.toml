@@ -4,6 +4,8 @@ version = "0.1.0"
 description = ""
 authors = ["Marek Barak <mrk.barak@gmail.com>"]
 readme = "README.md"
+packages = [{include = "modern_data_stack"}]
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -17,6 +19,8 @@ kaggle = "^1.5.12"
 jupyterlab = "^3.5.3"
 pyarrow = "^11.0.0"
 boto3 = "^1.26.66"
+localstack = "^1.4.0"
+dagster-aws = "^0.17.19"
 
 
 [build-system]
