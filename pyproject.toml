@@ -21,6 +21,9 @@ pyarrow = "^11.0.0"
 boto3 = "^1.26.66"
 localstack = "^1.4.0"
 dagster-aws = "^0.17.19"
+awscli-local = "^0.20"
+dbt-core = "^1.4.1"
+dbt-duckdb = "^1.4.0"
 
 
 [build-system]
