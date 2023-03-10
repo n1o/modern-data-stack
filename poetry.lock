@@ -687,20 +687,20 @@ tox = ["tox"]
 
 [[package]]
 name = "dagit"
-version = "1.1.19"
+version = "1.1.20"
 description = "Web UI for dagster."
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dagit-1.1.19-py3-none-any.whl", hash = "sha256:8a1fef3b20c06da010eab47011e3deed83f3b9d98000708aaa3d075b3397a0b5"},
-    {file = "dagit-1.1.19.tar.gz", hash = "sha256:1c20a2227b56e245c64b228c96b096e037e53eb0b13e7916d5d5eaa2bec2fbce"},
+    {file = "dagit-1.1.20-py3-none-any.whl", hash = "sha256:d387715d750faa97cf4a25e9b5c0d0111c22bfc43ee2beffcc4d91e1deafe886"},
+    {file = "dagit-1.1.20.tar.gz", hash = "sha256:0e6688eeb32ef66f886a72081f9fc4697e8b564a703d6bac8a0e281c188727be"},
 ]
 
 [package.dependencies]
 click = ">=7.0,<9.0"
-dagster = "1.1.19"
-dagster-graphql = "1.1.19"
+dagster = "1.1.20"
+dagster-graphql = "1.1.20"
 starlette = "*"
 uvicorn = {version = "*", extras = ["standard"]}
 
@@ -710,14 +710,14 @@ test = ["starlette[full]"]
 
 [[package]]
 name = "dagster"
-version = "1.1.19"
+version = "1.1.20"
 description = "The data orchestration platform built for productivity."
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dagster-1.1.19-py3-none-any.whl", hash = "sha256:5166ebb478e301366537aff7c7e56dc71ceb12ed100c336186cff4cfbb622090"},
-    {file = "dagster-1.1.19.tar.gz", hash = "sha256:bfce26bd885053ba3995543df07ec39aa5ddab7a7a6ab601ddc861aad01cacc1"},
+    {file = "dagster-1.1.20-py3-none-any.whl", hash = "sha256:28e357695ee49623744a440d97bf0671fbd782dd1845ad1125f88eb1d00056e0"},
+    {file = "dagster-1.1.20.tar.gz", hash = "sha256:a51ddd331362010c875342bad0d939c639e8026bf5d600baf701c38c03d6fd2c"},
 ]
 
 [package.dependencies]
@@ -753,25 +753,26 @@ watchdog = ">=0.8.3"
 [package.extras]
 black = ["black[jupyter] (==22.12.0)"]
 docker = ["docker"]
+mypy = ["mypy (==0.991)"]
 pyright = ["pandas-stubs", "pyright (==1.1.293)", "types-PyYAML", "types-backports", "types-certifi", "types-chardet", "types-croniter", "types-cryptography", "types-mock", "types-paramiko", "types-pkg-resources", "types-pyOpenSSL", "types-python-dateutil", "types-pytz", "types-requests", "types-simplejson", "types-six", "types-sqlalchemy", "types-tabulate", "types-toml", "types-tzlocal"]
 ruff = ["ruff (==0.0.241)"]
 test = ["buildkite-test-collector", "docker", "grpcio-tools (>=1.32.0,<1.44.0)", "mock (==3.0.5)", "objgraph", "pytest (==7.0.1)", "pytest-cov (==2.10.1)", "pytest-dependency (==0.5.1)", "pytest-mock (==3.3.1)", "pytest-rerunfailures (==10.0)", "pytest-runner (==5.2)", "pytest-xdist (==2.1.0)", "responses", "snapshottest (==0.6.0)", "tox (==3.25.0)", "yamllint"]
 
 [[package]]
 name = "dagster-aws"
-version = "0.17.19"
+version = "0.17.20"
 description = "Package for AWS-specific Dagster framework solid and resource components."
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dagster-aws-0.17.19.tar.gz", hash = "sha256:1f62d8af53efc621bd1789f781f64d1916e2dc295cb5e167b3b906e5cc5bdcff"},
-    {file = "dagster_aws-0.17.19-py3-none-any.whl", hash = "sha256:307b6797309600334e4f8d790eb03eda3ce766f43d56cc1743199e2063f9bb16"},
+    {file = "dagster-aws-0.17.20.tar.gz", hash = "sha256:2dd9a0a7515de733c90d18f2f3a4de6e604cf30351c0c6e1a792b663fd125c4c"},
+    {file = "dagster_aws-0.17.20-py3-none-any.whl", hash = "sha256:c060675ba09c3a13ad0f93828d2aab9f9d2c0bed6ac8b5686487aacb25f1f222"},
 ]
 
 [package.dependencies]
 boto3 = "*"
-dagster = "1.1.19"
+dagster = "1.1.20"
 packaging = "*"
 requests = "*"
 
@@ -781,19 +782,40 @@ redshift = ["psycopg2-binary"]
 test = ["moto (>=2.2.8)", "requests-mock", "xmltodict (==0.12.0)"]
 
 [[package]]
+name = "dagster-dbt"
+version = "0.17.20"
+description = "A Dagster integration for dbt"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "dagster-dbt-0.17.20.tar.gz", hash = "sha256:7733d10017b39d930bcee1362c103c369d83318c8558d6668373d7754b270633"},
+    {file = "dagster_dbt-0.17.20-py3-none-any.whl", hash = "sha256:70078fbc855f8ba18f744f2ce89bbf9f20a0c6fcd604db00dcaf409db96fdac5"},
+]
+
+[package.dependencies]
+dagster = "1.1.20"
+dbt-core = "*"
+requests = "*"
+typer = {version = "*", extras = ["all"]}
+
+[package.extras]
+test = ["Jinja2", "dbt-postgres", "dbt-rpc (<0.3.0)"]
+
+[[package]]
 name = "dagster-graphql"
-version = "1.1.19"
+version = "1.1.20"
 description = "The GraphQL frontend to python dagster."
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dagster-graphql-1.1.19.tar.gz", hash = "sha256:9fae6c76bda61c4b16733b4e0b614de67162a884aacc7a2d185c90c71ae6f10f"},
-    {file = "dagster_graphql-1.1.19-py3-none-any.whl", hash = "sha256:46d9046d89b4cc7c2d3143c16e00d7f16bd3f09dbf53d9c9f7cbfcd4a7a7416b"},
+    {file = "dagster-graphql-1.1.20.tar.gz", hash = "sha256:e8803a47a35cad022a6aa9a4bae604f1003e0651e8dac7592855e8865339f914"},
+    {file = "dagster_graphql-1.1.20-py3-none-any.whl", hash = "sha256:aaffe170fc3bcdfba894bdb09d854c62f37f4c4a931c8e556a92e54cd1d320e3"},
 ]
 
 [package.dependencies]
-dagster = "1.1.19"
+dagster = "1.1.20"
 gql = {version = ">=3.0.0", extras = ["requests"]}
 graphene = ">=3"
 requests = "*"
@@ -1050,6 +1072,23 @@ files = [
 
 [package.dependencies]
 numpy = ">=1.14"
+
+[[package]]
+name = "duckdb-engine"
+version = "0.6.9"
+description = "SQLAlchemy driver for duckdb"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "duckdb_engine-0.6.9-py3-none-any.whl", hash = "sha256:3df47a4cc262afc18644d2c899c37637126af623046c60070135456eff9b2383"},
+    {file = "duckdb_engine-0.6.9.tar.gz", hash = "sha256:b161c1baafb8233ccc56d533290d0076fd8063a676b08be0bc6d24947d50dad5"},
+]
+
+[package.dependencies]
+duckdb = ">=0.4.0"
+numpy = "*"
+sqlalchemy = ">=1.3.19,<2.0.0"
 
 [[package]]
 name = "ecdsa"
@@ -1774,6 +1813,30 @@ format = ["idna", "jsonpointer (>1.13)", "rfc3987", "strict-rfc3339", "webcolors
 format-nongpl = ["idna", "jsonpointer (>1.13)", "rfc3339-validator", "rfc3986-validator (>0.1.0)", "webcolors"]
 
 [[package]]
+name = "jupysql"
+version = "0.6.2"
+description = "Better SQL in Jupyter"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "jupysql-0.6.2-py3-none-any.whl", hash = "sha256:0de2bbb60d4e3d2b523f18aeeb3039d3a5cd588e515582a589aa7ba44da6fdd5"},
+    {file = "jupysql-0.6.2.tar.gz", hash = "sha256:32db1fdb0706344b6baf664d7484b56ff3deb4a23bc83351aa75f7ba09c2edd2"},
+]
+
+[package.dependencies]
+ipython = ">=1.0"
+ipython-genutils = ">=0.1.0"
+jinja2 = "*"
+ploomber-core = ">=0.2.4"
+prettytable = "*"
+sqlalchemy = ">=0.6.7,<2.0"
+sqlparse = "*"
+
+[package.extras]
+dev = ["black", "duckdb", "duckdb-engine", "flake8", "invoke", "matplotlib", "pandas", "pkgmt", "polars", "pytest", "twine"]
+
+[[package]]
 name = "jupyter-client"
 version = "8.0.2"
 description = "Jupyter protocol implementation and client libraries"
@@ -2290,6 +2353,18 @@ python-versions = "*"
 files = [
     {file = "mistune-2.0.4-py2.py3-none-any.whl", hash = "sha256:182cc5ee6f8ed1b807de6b7bb50155df7b66495412836b9a74c8fbdfc75fe36d"},
     {file = "mistune-2.0.4.tar.gz", hash = "sha256:9ee0a66053e2267aba772c71e06891fa8f1af6d4b01d5e84e267b4570d4d9808"},
+]
+
+[[package]]
+name = "monotonic"
+version = "1.6"
+description = "An implementation of time.monotonic() for Python 2 & < 3.3"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "monotonic-1.6-py2.py3-none-any.whl", hash = "sha256:68687e19a14f11f26d140dd5c86f3dba4bf5df58003000ed467e0e2a69bca96c"},
+    {file = "monotonic-1.6.tar.gz", hash = "sha256:3a55207bcfed53ddd5c5bae174524062935efed17792e9de2ad0205ce9ad63f7"},
 ]
 
 [[package]]
@@ -2840,6 +2915,26 @@ docs = ["furo (>=2022.12.7)", "proselint (>=0.13)", "sphinx (>=5.3)", "sphinx-au
 test = ["appdirs (==1.4.4)", "covdefaults (>=2.2.2)", "pytest (>=7.2)", "pytest-cov (>=4)", "pytest-mock (>=3.10)"]
 
 [[package]]
+name = "ploomber-core"
+version = "0.2.6"
+description = ""
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ploomber-core-0.2.6.tar.gz", hash = "sha256:e2c490d09e271e3ec042344e64f1e100e464b8882a1ea8f41cd5eac64e665b67"},
+    {file = "ploomber_core-0.2.6-py3-none-any.whl", hash = "sha256:30478b467f1cafe120d3b05a4453cb4345aad4acd2dad7c9e6fc05f02b844f00"},
+]
+
+[package.dependencies]
+click = "*"
+posthog = "*"
+pyyaml = "*"
+
+[package.extras]
+dev = ["flake8", "invoke", "pkgmt", "pytest", "twine"]
+
+[[package]]
 name = "pluggy"
 version = "1.0.0"
 description = "plugin and hook calling mechanisms for python"
@@ -2900,6 +2995,48 @@ pandas = ["pandas", "pyarrow (>=4.0.0)"]
 pyarrow = ["pyarrow (>=4.0.0)"]
 timezone = ["backports.zoneinfo", "tzdata"]
 xlsx2csv = ["xlsx2csv (>=0.8.0)"]
+
+[[package]]
+name = "posthog"
+version = "2.3.1"
+description = "Integrate PostHog into any python application."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "posthog-2.3.1-py2.py3-none-any.whl", hash = "sha256:53417f2200ad460afe776adaf1d1941378c6509ff87505d3493ffc8fdb465652"},
+    {file = "posthog-2.3.1.tar.gz", hash = "sha256:9bd445a762e5fd55142862689e1841046df15e6378e7e8455c2f62aced0053d3"},
+]
+
+[package.dependencies]
+backoff = ">=1.10.0"
+monotonic = ">=1.5"
+python-dateutil = ">2.1"
+requests = ">=2.7,<3.0"
+six = ">=1.5"
+
+[package.extras]
+dev = ["black", "isort", "pre-commit"]
+sentry = ["django", "sentry-sdk"]
+test = ["coverage", "flake8", "freezegun (==0.3.15)", "mock (>=2.0.0)", "pylint", "pytest"]
+
+[[package]]
+name = "prettytable"
+version = "3.6.0"
+description = "A simple Python library for easily displaying tabular data in a visually appealing ASCII table format"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "prettytable-3.6.0-py3-none-any.whl", hash = "sha256:3b767129491767a3a5108e6f305cbaa650f8020a7db5dfe994a2df7ef7bad0fe"},
+    {file = "prettytable-3.6.0.tar.gz", hash = "sha256:2e0026af955b4ea67b22122f310b90eae890738c08cb0458693a49b6221530ac"},
+]
+
+[package.dependencies]
+wcwidth = "*"
+
+[package.extras]
+tests = ["pytest", "pytest-cov", "pytest-lazy-fixture"]
 
 [[package]]
 name = "prometheus-client"
@@ -3708,6 +3845,18 @@ testing = ["build[virtualenv]", "filelock (>=3.4.0)", "flake8 (<5)", "flake8-202
 testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "pytest", "pytest-enabler", "pytest-xdist", "tomli", "virtualenv (>=13.0.0)", "wheel"]
 
 [[package]]
+name = "shellingham"
+version = "1.5.0.post1"
+description = "Tool to Detect Surrounding Shell"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "shellingham-1.5.0.post1-py2.py3-none-any.whl", hash = "sha256:368bf8c00754fd4f55afb7bbb86e272df77e4dc76ac29dbcbb81a59e9fc15744"},
+    {file = "shellingham-1.5.0.post1.tar.gz", hash = "sha256:823bc5fb5c34d60f285b624e7264f4dda254bc803a3774a147bf99c0e3004a28"},
+]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -3895,6 +4044,17 @@ files = [
 ]
 
 [[package]]
+name = "superset"
+version = "0.30.1"
+description = "Superset has moved to apache-superset, as of 0.34.0 onwards, please pip install apache-superset"
+category = "main"
+optional = false
+python-versions = "~=3.6"
+files = [
+    {file = "superset-0.30.1.tar.gz", hash = "sha256:b2507d78f57193e8e629110f11d6f8f326a7313f0cea912f637821a8be24d7ea"},
+]
+
+[[package]]
 name = "tabulate"
 version = "0.9.0"
 description = "Pretty-print tabular data"
@@ -4053,6 +4213,29 @@ files = [
 [package.extras]
 docs = ["myst-parser", "pydata-sphinx-theme", "sphinx"]
 test = ["argcomplete (>=2.0)", "pre-commit", "pytest", "pytest-mock"]
+
+[[package]]
+name = "typer"
+version = "0.4.2"
+description = "Typer, build great CLIs. Easy to code. Based on Python type hints."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "typer-0.4.2-py3-none-any.whl", hash = "sha256:023bae00d1baf358a6cc7cea45851639360bb716de687b42b0a4641cd99173f1"},
+    {file = "typer-0.4.2.tar.gz", hash = "sha256:b8261c6c0152dd73478b5ba96ba677e5d6948c715c310f7c91079f311f62ec03"},
+]
+
+[package.dependencies]
+click = ">=7.1.1,<9.0.0"
+colorama = {version = ">=0.4.3,<0.5.0", optional = true, markers = "extra == \"all\""}
+shellingham = {version = ">=1.3.0,<2.0.0", optional = true, markers = "extra == \"all\""}
+
+[package.extras]
+all = ["colorama (>=0.4.3,<0.5.0)", "shellingham (>=1.3.0,<2.0.0)"]
+dev = ["autoflake (>=1.3.1,<2.0.0)", "flake8 (>=3.8.3,<4.0.0)", "pre-commit (>=2.17.0,<3.0.0)"]
+doc = ["mdx-include (>=1.4.1,<2.0.0)", "mkdocs (>=1.1.2,<2.0.0)", "mkdocs-material (>=8.1.4,<9.0.0)"]
+test = ["black (>=22.3.0,<23.0.0)", "coverage (>=5.2,<6.0)", "isort (>=5.0.6,<6.0.0)", "mypy (==0.910)", "pytest (>=4.4.0,<5.4.0)", "pytest-cov (>=2.10.0,<3.0.0)", "pytest-sugar (>=0.9.4,<0.10.0)", "pytest-xdist (>=1.32.0,<2.0.0)", "shellingham (>=1.3.0,<2.0.0)"]
 
 [[package]]
 name = "typing-extensions"
@@ -4507,4 +4690,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "097389e50589b302c204bfe0599e330f3e18383fa69e977e6d4eac8ab6a4ca2e"
+content-hash = "bc62b91a21ff5daaf61e4443ccaba8d615df32a1b8276d68865f39241b1fbad7"

@@ -24,6 +24,10 @@ dagster-aws = "^0.17.19"
 awscli-local = "^0.20"
 dbt-core = "^1.4.1"
 dbt-duckdb = "^1.4.0"
+dagster-dbt = "^0.17.20"
+jupysql = "^0.6.2"
+duckdb-engine = "^0.6.9"
+superset = "^0.30.1"
 
 
 [build-system]

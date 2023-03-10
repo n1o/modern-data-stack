@@ -1,0 +1,9 @@
+arxiv:
+  outputs:
+    dev:
+      type: duckdb
+      path: ":memory:"
+      extensions:
+        - httpfs
+        - parquet
+  target: dev

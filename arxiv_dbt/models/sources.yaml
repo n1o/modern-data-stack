@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: arxiv
+    tables:
+      - name: arxiv_data
+        meta: 
+          external_location: "{{ var('bucket') ~ '/' ~ var('arxiv_parquet') }}"

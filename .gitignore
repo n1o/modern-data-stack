@@ -1,0 +1,12 @@
+# Dagster TMP folder
+tmp*
+
+terraform/.terraform
+__pycache__
+
+arxiv_dbt/target
+arxiv_dbt/logs
+.vscode
+.pytest_cache
+.ipynb_checkpoints
+
